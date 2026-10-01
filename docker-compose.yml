@@ -1,0 +1,128 @@
+# Schwachstellen-Radar – local stack.
+# Start: `docker compose up -d` (or `make up` / `python scripts/tasks.py up`).
+# Image versions are pinned so the demo behaves the same on every machine (D-010).
+
+name: radar
+
+x-host-gateway: &host-gateway
+  # Lets containers reach services on the host, e.g. the host Ollama.
+  # Docker Desktop (Windows/macOS) provides host.docker.internal already;
+  # this line makes the same name work on Linux.
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+
+services:
+  postgres:
+    image: postgres:17.11
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-radar}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-radar}
+      TZ: Europe/Berlin
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # Runs once on an empty volume: creates the `n8n` and `radar` schemas.
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-radar} -d ${POSTGRES_DB:-radar}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  n8n:
+    image: n8nio/n8n:2.41.4
+    restart: unless-stopped
+    <<: *host-gateway
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: ${POSTGRES_DB:-radar}
+      DB_POSTGRESDB_USER: ${POSTGRES_USER:-radar}
+      DB_POSTGRESDB_PASSWORD: ${POSTGRES_PASSWORD}
+      # n8n's own tables live in their own schema, apart from our `radar` data.
+      DB_POSTGRESDB_SCHEMA: n8n
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:?set N8N_ENCRYPTION_KEY in .env}
+      GENERIC_TIMEZONE: Europe/Berlin
+      TZ: Europe/Berlin
+      N8N_HOST: localhost
+      N8N_PROTOCOL: http
+      WEBHOOK_URL: http://localhost:5678/
+      # Plain http on localhost: secure cookies would block the login.
+      N8N_SECURE_COOKIE: "false"
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      N8N_PERSONALIZATION_ENABLED: "false"
+      # n8n's own system mails (invites, password reset) also go to Mailpit.
+      N8N_EMAIL_MODE: smtp
+      N8N_SMTP_HOST: mailpit
+      N8N_SMTP_PORT: 1025
+      N8N_SMTP_SSL: "false"
+      N8N_SMTP_SENDER: ${MAIL_FROM:-radar@example.invalid}
+      RADAR_API_URL: http://radar-api:8000
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./n8n/workflows:/workflows
+    ports:
+      - "127.0.0.1:5678:5678"
+
+  radar-api:
+    build: .
+    restart: unless-stopped
+    <<: *host-gateway
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - path: .env
+        required: false   # `make up` refuses to start without it anyway
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-radar}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-radar}
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      TZ: Europe/Berlin
+    volumes:
+      # Mounted rather than baked in: snapshots, samples and prompts change
+      # during development and must survive container rebuilds.
+      - ./data:/app/data
+      - ./config:/app/config:ro
+      - ./prompts:/app/prompts:ro
+      - ./eval:/app/eval
+    ports:
+      - "127.0.0.1:8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  mailpit:
+    image: axllent/mailpit:v1.31.3
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Berlin
+    ports:
+      - "127.0.0.1:8025:8025"   # web UI
+      - "127.0.0.1:1025:1025"   # SMTP
+
+  # Optional in-container model server, for machines without a host Ollama.
+  # Default is the host Ollama via host.docker.internal (D-011).
+  # Start with: docker compose --profile local-llm up -d
+  ollama:
+    image: ollama/ollama:0.35.0
+    profiles: ["local-llm"]
+    restart: unless-stopped
+    volumes:
+      - ollama_models:/root/.ollama
+    ports:
+      - "127.0.0.1:11435:11434"   # 11435 so it cannot clash with a host Ollama on 11434
+
+volumes:
+  pgdata:
+  n8n_data:
+  ollama_models:
