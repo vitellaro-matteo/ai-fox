@@ -61,3 +61,39 @@ deliberately skip.
 A: EUVD publishes no licence for reuse, and its records contain third-party text. When
 the right to redistribute is unclear, we keep the data in a local cache and don't
 publish it.
+
+## 3. LLM providers: local by default, cloud as option B
+
+**In plain words.** The same open-weight model (gpt-oss-20b) can run in two places:
+on our own machine with Ollama, or in Groq's cloud on its free tier. The code sends
+the same prompt and checks the answer with the same rules in both cases. Only the
+address differs. Local is the default; the cloud is only for fast development with
+synthetic data.
+
+**Q: Why is the local model the default if the cloud is faster?**
+A: Because of what the data is. An inventory says which customer runs which firewall
+version and which systems are reachable from the internet. That is exactly what an
+attacker wants to know. With a local model it never leaves the MSP's own machines.
+And a free tier has no guarantees: limits and the model list can change overnight,
+which doesn't fit a process with a 24-hour reaction target.
+
+**Q: Then why use Groq at all?**
+A: Speed while developing. A prompt change tested on 100 pairs takes minutes in the
+cloud and much longer on a laptop CPU. That data is synthetic, so there is no
+confidentiality problem.
+
+**Q: "Same model" on both sides: are the results really identical?**
+A: Not guaranteed, and I measure it instead of assuming it. The published weights are
+the same, but the two providers may compress the model differently (quantization) and
+use different defaults. The evaluation reports how often both give the same decision
+and lists the cases where they differ.
+
+**Q: What happens when Groq's rate limit is hit?**
+A: The eval runner reads the limits from the response headers and slows down before
+reaching them. If it still gets an HTTP 429, it waits as long as the server asks and
+retries. Every finished pair is saved at once, so a run can stop and continue later,
+and the report says how often a limit was hit.
+
+**Q: What if Groq is down during the live demo?**
+A: Nothing happens, because the demo never calls it. The demo's LLM results were
+computed beforehand and are replayed from a cache.

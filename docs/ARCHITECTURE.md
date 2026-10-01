@@ -21,7 +21,7 @@ flowchart LR
         MAIL["Mailpit<br/>catches every mail"]
     end
 
-    LLM["LLM<br/>Anthropic API or<br/>host Ollama"]
+    LLM["LLM (gpt-oss-20b)<br/>host Ollama = default<br/>Groq free tier = option B"]
     INV["Customer inventories<br/>CSV / JSON<br/>(synthetic)"]
     ANALYST(("Analyst"))
 
@@ -72,6 +72,8 @@ flowchart TD
 - **Advisory and inventory text is untrusted input.** It reaches the LLM only inside
   delimiters, marked as data. The LLM has no tools, and its output must pass a
   Pydantic schema.
+- **Customer data stays local by default.** The default LLM provider is the local
+  Ollama. Groq is only used for development and eval runs on synthetic data (D-015).
 - **Priority is computed in code** from `config/scoring.yaml`. An LLM answer cannot
   change it.
 - **Nothing reaches a customer without a logged approval.** The only path to a customer

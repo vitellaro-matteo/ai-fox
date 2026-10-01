@@ -26,6 +26,10 @@ Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
 - Comment *why*, not *what*.
 - Plain SQL with psycopg, no ORM (D-014).
 - LLM calls only in `radar/llm/`, never in n8n AI nodes (D-012). Model names from env.
+- Zero cost: providers are local Ollama (default; demo and real customer data) and the
+  Groq free tier (option B; dev and eval only). No paid API. Missing `GROQ_API_KEY`
+  means fall back to Ollama without an error. The live demo never calls Groq (D-015).
+- Same prompts, same JSON schema, same Pydantic validation for every provider.
 - Priority is computed in code from `config/scoring.yaml`. The LLM never decides it.
 - When unsure (thresholds, legal points, vendor versioning quirks): make it
   configurable, write it down as an ASSUMPTION in `docs/DECISIONS.md`, and flag it.
@@ -43,7 +47,8 @@ Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
   also work as `python scripts/tasks.py <target>` (stdlib only, Python 3.10-compatible).
 - Service code runs in Docker (Python 3.12, uv). Open files with `encoding="utf-8"`
   (the Windows default codepage garbles German umlauts).
-- Local LLM: host Ollama at `http://host.docker.internal:11434`.
+- Local LLM: host Ollama at `http://host.docker.internal:11434`. Laptop: 16 GB RAM,
+  Ryzen 5 3600, Radeon RX 5700; C: is nearly full, D: and E: have space.
 
 ## Layout
 

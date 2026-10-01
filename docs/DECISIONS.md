@@ -147,7 +147,7 @@ so the two cannot clash).
 
 **Choice.** All prompts, LLM calls, validation and cost logging are Python code in
 `radar/llm/`. n8n owns the process: scheduling, branching, waiting for the human,
-retries, notifications. Model names come from `LLM_MODEL_MATCH` / `LLM_MODEL_DRAFT`.
+retries, notifications. Model names come from `OLLAMA_MODEL` / `GROQ_MODEL` (see D-015).
 **Why.** Versioned prompts, unit tests, one eval harness, one place to swap providers.
 **Trade-off.** The n8n canvas shows an HTTP call instead of a visible "AI" node. The
 slide has to explain where the AI sits.
@@ -157,7 +157,9 @@ slide has to explain where the AI sits.
 
 `EVAL_COST_CAP_EUR` (default 5). The eval runner adds up the estimated cost after
 every LLM call and aborts the run when the cap is reached. Spend is logged per run.
-Prices live in config, so the cap is only as accurate as those prices.
+Prices live in config, so the cap is only as accurate as those prices. Since D-015
+both configured providers cost 0 EUR, so the cap only matters if a paid provider is
+added later. It stays in, because "we forgot the cap" is a bad surprise.
 
 ## D-014 – Plain SQL and psycopg instead of an ORM
 *2026-09-30*
@@ -167,3 +169,98 @@ and accessed with psycopg 3 and explicit SQL.
 **Why.** Every query can be shown and explained in the interview. An ORM would hide the
 queries that produce the audit trail.
 **Trade-off.** More code by hand for inserts and selects; no automatic model sync.
+
+## D-015 – Zero-cost LLM setup: local Ollama is the default, Groq free tier is option B
+*2026-10-01 · decided by Matteo*
+
+**Context.** The project must cost nothing to run. Two free ways to run a model exist:
+locally with Ollama, or on Groq's free tier (no credit card).
+**Choice.**
+- **Ollama (local) is the default provider**, for the demo and for anything that could
+  hold real customer data.
+- **Groq is option B**, used for speed during development and for eval runs. The key
+  comes from `GROQ_API_KEY`. If the key is missing, everything uses Ollama, and this is
+  logged as information, not raised as an error.
+- Both providers get the same prompt files, the same JSON schema, and the same Pydantic
+  validation. A provider only differs in how the request is sent.
+- The live demo never calls Groq. Demo LLM results are precomputed and cached.
+
+**Why local is the default.**
+1. *Confidentiality.* A customer inventory lists which firewall, which version, and
+   which system is reachable from the internet. That is a map for an attacker. With a
+   local model this data never leaves the MSP's own machines. In this project the
+   inventories are synthetic, but the default has to be the one that would be right
+   with real data.
+2. *No guarantees on a free tier.* Groq's free limits, model list and terms can change
+   at any time, and there is no SLA. During this project the free model list already
+   turned out smaller than expected (D-016). A process with a 24-hour reaction target
+   cannot depend on that.
+
+**Trade-off.** Local inference is slower, and on a 16 GB laptop the model choice is
+tight (D-016). Development would be painfully slow without Groq, which is why it stays
+as option B.
+**Open point.** The kickoff brief named the Anthropic API as the default provider. The
+zero-cost plan replaces it. A paid provider can be added later behind the same
+interface; nothing in the design prevents it.
+
+## D-016 – One open-weight model for both providers: gpt-oss-20b (fit on 16 GB unproven)
+*2026-10-01 · model choice needs Matteo's confirmation after a fit test*
+
+**Context.** For the "same model, cloud or on-premise" comparison, the model must exist
+on Groq's free tier and in the Ollama library. Checked on 2026-10-01:
+- Groq free-tier chat models: `openai/gpt-oss-20b`, `openai/gpt-oss-120b`,
+  `openai/gpt-oss-safeguard-20b`, `qwen/qwen3.8-27b` (preview). The Llama models are
+  listed with enterprise pricing only and are not in the free rate-limit table.
+- Strict JSON-schema output on Groq: `gpt-oss-20b`, `gpt-oss-120b`, `qwen3.8-27b`.
+- Ollama: `gpt-oss:20b` is a 14 GB download; `gpt-oss:120b` is 65 GB.
+
+**Choice.** `openai/gpt-oss-20b` on Groq and `gpt-oss:20b` on Ollama. It is the smallest
+model that exists on both sides, and the only realistic one for a laptop.
+**Risk, not yet resolved.** Matteo's laptop has 16 GB RAM, a Ryzen 5 3600, and a
+Radeon RX 5700, which is not on Ollama's list of supported AMD cards for Windows (that
+list starts at the RX 7000 series; newer Ollama versions may use it through Vulkan). A
+14 GB model next to Windows and the Docker stack (WSL2 may take up to 8 GB) will very
+likely not fit in memory at the same time. Drive C: also has only 10 GB free, so the
+model cannot even be downloaded to the default folder.
+**Plan.** Test before building on it: (1) move the Ollama model folder to D: or E:,
+(2) update Ollama from 0.17.1, (3) pull the model, (4) measure load time, memory and
+seconds per call with the stack stopped and with it running.
+**Fallbacks if it does not fit.**
+- (a) Run the local half of the comparison with the Docker stack stopped. The eval only
+  needs the frozen pairs and the model, and the demo uses cached results anyway.
+- (b) Give up "same model": Groq `gpt-oss-20b` versus a smaller local model. The slide
+  then compares two different models, which is a weaker statement.
+
+## D-017 – Eval runner respects Groq's free-tier rate limits
+*2026-10-01 · decided by Matteo*
+
+**Context.** Free-tier limits for `openai/gpt-oss-20b` according to Groq's docs on
+2026-10-01: 30 requests/minute, 1,000 requests/day, 8,000 tokens/minute, 200,000
+tokens/day, counted per organization. Tokens are the tight limit: at roughly 1,000
+tokens per matching call that is about 8 calls per minute and about 200 calls per day.
+(The 1,000 tokens are an estimate; gpt-oss is a reasoning model and its reasoning
+tokens count too. Phase 2 measures the real number.)
+**Choice.**
+- Limits are not hard-coded. The runner reads them from the response headers
+  (`x-ratelimit-limit-*`, `x-ratelimit-remaining-*`, `x-ratelimit-reset-*`) and slows
+  down before a limit is reached.
+- On HTTP 429 it waits for the time given in `retry-after`, with exponential backoff as
+  a fallback, and retries.
+- Every finished pair is written to the database at once, so an interrupted run
+  continues where it stopped. A run can therefore be spread over several days.
+- The run report states how often a limit was hit and how long the run waited in total.
+
+**Trade-off.** An eval with more than about 200 LLM calls takes more than one day on
+Groq. The eval set has to be sized with that in mind, and the deterministic stage has
+to resolve as much as possible first.
+
+## D-018 – Phase 4 comparison: same model on Groq and on local Ollama
+*2026-10-01 · decided by Matteo*
+
+This replaces the "cloud model versus local model" comparison of the kickoff brief. The
+same frozen pairs run through `gpt-oss-20b` on Groq and on Ollama. The report shows:
+agreement (the share of pairs with the same decision, plus a table of the
+disagreements), latency per call for each, and the cost: 0 EUR for both.
+**Caveat to state on the slide.** "Same model" means the same published weights. Groq
+and Ollama may use different quantization and different default settings, so small
+differences in the answers are expected, and the agreement rate measures exactly that.

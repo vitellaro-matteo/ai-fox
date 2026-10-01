@@ -46,7 +46,7 @@ Mensch gibt frei.*
 ### First start
 
 ```bash
-cp .env.example .env        # then set POSTGRES_PASSWORD, N8N_ENCRYPTION_KEY, ANTHROPIC_API_KEY
+cp .env.example .env        # then set POSTGRES_PASSWORD and N8N_ENCRYPTION_KEY
 ```
 
 Every task works in two equivalent ways:
@@ -69,6 +69,22 @@ Then open:
 | radar-api / dashboard | http://localhost:8000 (health check: `/health`, `/health/db`) |
 | n8n | http://localhost:5678 (create the owner account on first visit) |
 | Mailpit | http://localhost:8025 |
+
+### LLM providers (both free)
+
+| Provider | Role | Setting |
+|---|---|---|
+| Ollama (local) | **Default.** Demo, and anything that could hold real customer data | `LLM_PROVIDER=ollama` |
+| Groq free tier | Option B: faster development and eval runs, synthetic data only | `LLM_PROVIDER=groq` + `GROQ_API_KEY` |
+
+Both run the same open-weight model (`gpt-oss-20b`) with the same prompts and the same
+output validation. Without a `GROQ_API_KEY` everything uses Ollama; that is not an
+error. The live demo never calls Groq. See D-015 to D-018 in
+[docs/DECISIONS.md](docs/DECISIONS.md).
+
+```bash
+ollama pull gpt-oss:20b     # 14 GB download; see D-016 about memory on a 16 GB machine
+```
 
 ### Local model via the host Ollama
 
