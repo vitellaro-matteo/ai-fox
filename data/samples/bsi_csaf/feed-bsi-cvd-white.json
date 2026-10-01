@@ -1,0 +1,634 @@
+{
+  "feed" : {
+    "category" : [ {
+      "scheme" : "urn:ietf:params:rolie:category:information-type",
+      "term" : "csaf"
+    } ],
+    "entry" : [ {
+      "category" : [ {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-50975"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLX8"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VibroLine 4.0 VLX Firmware"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE2 HD 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX8 HD 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLE2"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "VLE"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX1 HD 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VibroLine 4.0 VLE Firmware"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-50978"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLX4"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE8 HD 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "VibroLine 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "IDS Innomic Schwingungsmesstechnik GmbH"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX6 HD 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AvibiaLine Configurator"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-50981"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "avibia GmbH"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AvibiaLine Firmware"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLX2"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "VLX"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-50979"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VibroLine 5.0 Firmware"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX1 HD 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLE"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE2 HD 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-50980"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VibroLine 4.0 Configurator"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX2 HD 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE1 HD 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX4 HD 4.0"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-306"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE4 HD 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE6 HD 4.0"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-521"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-1288"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE6 HD 5.0"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-50976"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLE8"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX4 HD 5.0"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-346"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE4 HD 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "AvibiaLine"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE1 HD 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VibroLine 5.0 Configurator"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "VibroLine 4.0 Firmware"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX8 HD 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "VibroLine 5.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLE4"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX2 HD 4.0"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLX6 HD 5.0"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-50977"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "AVLX"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "VLE8 HD 4.0"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2026/bsi-2026-0001.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2026-0001",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2026/bsi-2026-0001.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2026/bsi-2026-0001.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2026/bsi-2026-0001.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2026-02-02T13:00:00.000+00:00",
+      "title" : "Unauthorized access affects VibroLine and AvibiaLine devices",
+      "updated" : "2026-02-02T13:00:00.000+00:00"
+    }, {
+      "category" : [ {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "P3"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "Q26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "v26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "Q24M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "Q25M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "Mobotix"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "S16"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "D15Di"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "M15"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "c25"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "V15D"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "M24M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "p26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "S26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "V14D"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "M25M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "V16"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "S14"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "i26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_family",
+        "term" : "Mx6"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "v25"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2023-34873"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-146"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "D26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "c26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "T25M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "D24M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "M16"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "T26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "T24M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "M26"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "D14Di"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "D16"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "D25M"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "S15"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "M15-Thermal"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "P3 Firmware"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "i25"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "Mx6 Firmware"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "p25"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0002.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2024-0002",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0002.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0002.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0002.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2024-08-22T10:00:00.000+00:00",
+      "title" : "Authenticated Remote Code Execution affects Mobotix P3 and Mx6 cameras",
+      "updated" : "2024-08-22T17:30:00.000+00:00"
+    }, {
+      "category" : [ {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "WinSCP"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "TortoiseGit"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "PuTTY"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "TortoiseSVN"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "TortoiseSVN"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-334"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "TortoiseGit"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "FileZilla Client"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "PuTTY"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2024-31497"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "WinSCP"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "FileZilla"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0001.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2024-0001",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0001.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0001.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2024/bsi-2024-0001.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2024-04-15T19:00:00.000+00:00",
+      "title" : "Secret Key Recovery of NIST P-521 Private Keys through biased ECDSA nonces in PuTTY client",
+      "updated" : "2024-04-15T19:00:00.000+00:00"
+    }, {
+      "category" : [ {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-47924"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-47925"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "csaf-validator-service"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "csaf-validator-lib"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-20"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "Secvisogram"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0004.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2022-0004",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0004.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0004.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0004.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2022-09-01T13:22:00.000+00:00",
+      "title" : "Insufficient restrictions in validate functions of CSAF full validators",
+      "updated" : "2023-03-15T21:00:00.000+00:00"
+    }, {
+      "category" : [ {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "csaf_provider"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-43996"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-79"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "CSAF POC"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0003.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2022-0003",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0003.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0003.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0003.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2022-11-04T15:00:00.000+00:00",
+      "title" : "Stored Cross-Site Scripting (XSS) Vulnerability in csaf_provider",
+      "updated" : "2022-11-04T15:00:00.000+00:00"
+    }, {
+      "category" : [ {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-1244"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-43977"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-288"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-23"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "GE Grid Solutions"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "MS 3000"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-43976"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "MS 3000 firmware"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-43975"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0005.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2022-0005",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0005.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0005.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0005.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2022-11-02T21:00:00.000+00:00",
+      "title" : "Multiple Vulnerabilities in GE MS 3000",
+      "updated" : "2022-11-02T21:00:00.000+00:00"
+    }, {
+      "category" : [ {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "FastStone"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-36947"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-121"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "Image Viewer"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0002.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2022-0002",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0002.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0002.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0002.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2022-08-01T10:00:00.000+00:00",
+      "title" : "Stack Buffer Overflow vulnerability in FastStone Image Viewer 7.5 and earlier",
+      "updated" : "2022-08-01T10:00:00.000+00:00"
+    }, {
+      "category" : [ {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+        "term" : "csaf_security_advisory"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+        "term" : "CVRF-CSAF-Converter"
+      }, {
+        "scheme" : "https://cwe.mitre.org",
+        "term" : "CWE-611"
+      }, {
+        "scheme" : "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+        "term" : "CSAF Tools"
+      }, {
+        "scheme" : "https://www.cve.org",
+        "term" : "CVE-2022-27193"
+      } ],
+      "content" : {
+        "src" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0001.json",
+        "type" : "application/json"
+      },
+      "format" : {
+        "schema" : "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+        "version" : "2.0"
+      },
+      "id" : "BSI-2022-0001",
+      "link" : [ {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0001.json",
+        "rel" : "self"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0001.json.asc",
+        "rel" : "signature"
+      }, {
+        "href" : "https://wid.cert-bund.de/.well-known/csaf/white/2022/bsi-2022-0001.json.sha512",
+        "rel" : "hash"
+      } ],
+      "published" : "2022-03-17T13:03:42.105+00:00",
+      "title" : "CVRF-CSAF-Converter: XML External Entities Vulnerability",
+      "updated" : "2022-07-14T08:20:40.872+00:00"
+    } ],
+    "id" : "bsi-cvd-white",
+    "link" : [ {
+      "href" : "https://wid.cert-bund.de/.well-known/csaf/category-service-document.json",
+      "rel" : "service"
+    }, {
+      "href" : "https://wid.cert-bund.de/.well-known/csaf/white/bsi-cvd-white.json",
+      "rel" : "self"
+    } ],
+    "title" : "BSI CVD CSAF feed (TLP:WHITE)",
+    "updated" : "2026-09-30T20:00:37.877+00:00"
+  }
+}

@@ -1,0 +1,2055 @@
+{
+ "feed": {
+  "category": [
+   {
+    "scheme": "urn:ietf:params:rolie:category:information-type",
+    "term": "csaf"
+   }
+  ],
+  "id": "bsi-wid-white",
+  "link": [
+   {
+    "href": "https://wid.cert-bund.de/.well-known/csaf/category-service-document.json",
+    "rel": "service"
+   },
+   {
+    "href": "https://wid.cert-bund.de/.well-known/csaf/white/bsi-wid-white.json",
+    "rel": "self"
+   }
+  ],
+  "title": "BSI WID CSAF feed (TLP:WHITE)",
+  "updated": "2026-09-30T20:00:06.036+00:00",
+  "entry": [
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "poppler"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-102621"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-102620"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3674.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3674",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3674.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3674.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3674.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "poppler: Mehrere Schwachstellen ermöglichen nicht spezifizierten Angriff",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-102806"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "OpenClaw"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-102807"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3673.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3673",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3673.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3673.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3673.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "OpenClaw: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "n8n"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "n8n"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3672.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3672",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3672.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3672.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3672.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "n8n: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Moodle"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3671.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3671",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3671.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3671.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3671.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "Moodle: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "TeamViewer"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-19743"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-92371"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "TeamViewer"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-92370"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-92368"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "MacOS X"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-92369"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3670.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3670",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3670.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3670.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3670.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "TeamViewer: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Gitea"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "MacOS X"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3669.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3669",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3669.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3669.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3669.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "Gitea: Schwachstelle ermöglicht Offenlegung von Informationen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "nginx-ui"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3668.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3668",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3668.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3668.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3668.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "nginx-ui: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-101861"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Langflow"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3616.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3616",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3616.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3616.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3616.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-28T22:00:00.000+00:00",
+    "title": "Langflow: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Open Source GeoServer"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3620.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3620",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3620.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3620.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3620.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-28T22:00:00.000+00:00",
+    "title": "GeoServer: Schwachstelle ermöglicht Codeausführung und Offenlegung von Informationen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "OpenProject"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3667.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3667",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3667.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3667.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3667.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "OpenProject: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-73857"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-73856"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "ModSecurity"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-61812"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-61813"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "OWASP"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3666.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3666",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3666.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3666.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3666.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "OWASP ModSecurity: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Ubuntu Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63382"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Debian"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "RESF Rocky Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "RESF"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Red Hat"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Amazon"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63379"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63384"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-81665"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "IBM"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63385"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-15709"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Enterprise Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Ubuntu"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Amazon Linux 2"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63387"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Debian Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Oracle"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63388"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Oracle Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE openSUSE"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Red Hat Enterprise Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-15711"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63383"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "SUSE"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "IBM i"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-85197"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-63381"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE Linux"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3419.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3419",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3419.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3419.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3419.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-16T22:00:00.000+00:00",
+    "title": "Red Hat Enterprise Linux (corosync, libevent, libsoup): Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-6470"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Ubuntu Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "RESF Rocky Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-16239"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-15741"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14681"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14671"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-18408"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Ubuntu"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Amazon Linux 2"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14678"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Debian Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14668"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14669"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-6464"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE openSUSE"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-6471"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14676"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14672"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14662"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14679"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Debian"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-16241"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "RESF"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14663"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-18024"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Red Hat"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14680"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Amazon"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-16238"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14666"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14673"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Oracle"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Oracle Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Red Hat Enterprise Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-19385"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14664"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "PostgreSQL"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14677"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-14670"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "SUSE"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-6469"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-15742"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2844.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-2844",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2844.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2844.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2844.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-08-13T22:00:00.000+00:00",
+    "title": "PostgreSQL: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-54369"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Oracle Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE openSUSE"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Red Hat Enterprise Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "RESF Rocky Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "RESF"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Red Hat"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Gentoo"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Amazon"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-54370"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "SUSE"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Enterprise Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Amazon Linux 2"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "OpenShift"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Gentoo Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Oracle"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE Linux"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2453.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-2453",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2453.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2453.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2453.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-07-21T22:00:00.000+00:00",
+    "title": "Red Hat Enterprise Linux (acl): Mehrere Schwachstellen ermöglichen Privilegieneskalation und Manipulation von Dateien",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Arista EOS"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Fedora Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-59999"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "OpenSSH"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Ubuntu Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Secure E-Mail Gateway"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-60002"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "RESF Rocky Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "RESF"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Dell"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Red Hat"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-60000"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Microsoft"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "IGEL"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-59997"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Secure Connect Gateway"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-59996"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "IBM"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "NetApp ActiveIQ Unified Manager"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Ubuntu"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "IGEL OS"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Oracle"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Oracle Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Fedora"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE openSUSE"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-59998"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Red Hat Enterprise Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "integrated Dell Remote Access Controller"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "NetApp"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-60001"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Arista"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "SUSE"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Azure Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-59995"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "OpenShift"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "SEPPmail"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "IBM i"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "SUSE Linux"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2221.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-2221",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2221.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2221.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-2221.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-07-06T22:00:00.000+00:00",
+    "title": "OpenSSH: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-84445"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Red Hat Enterprise Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Enterprise Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Red Hat"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3605.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3605",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3605.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3605.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3605.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-27T22:00:00.000+00:00",
+    "title": "Red Hat Enterprise Linux (rhc): Schwachstelle ermöglicht Denial of Service",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-59889"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-19032"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-9563"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-54291"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "SOS GmbH"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-89407"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-68497"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "JobScheduler"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-91777"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-47857"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-89425"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-47863"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Windows"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3665.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3665",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3665.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3665.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3665.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "SOS GmbH JobScheduler: Mehrere Schwachstellen ermöglichen nicht spezifizierten Angriff",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-84783"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-101305"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "FreeBSD Project"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-101306"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "FreeBSD OS"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-101303"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-58100"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-101304"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-101302"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-58098"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-84782"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-58099"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3664.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3664",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3664.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3664.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3664.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "FreeBSD Project FreeBSD OS: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-12245"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-18664"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-19401"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "OpenBSD"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-12490"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-12244"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-19538"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-12246"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-18916"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "OpenBSD"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3663.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3663",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3663.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3663.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3663.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "OpenBSD: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-80110"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-76561"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Enterprise Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Red Hat"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3662.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3662",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3662.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3662.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3662.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "Red Hat Enterprise Linux (pki-core und dogtag-pki): Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-84411"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "RouterOS"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "MikroTik"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3661.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3661",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3661.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3661.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3661.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "MikroTik RouterOS: Schwachstelle ermöglicht Codeausführung und DoS",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-74221"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "UNIX"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "U-Boot"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-74222"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-74220"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-71974"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-71973"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "DENX"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-74225"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-71971"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-71972"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3660.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3660",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3660.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3660.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3660.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "DENX U-Boot: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-17487"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "i"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-17484"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "IBM"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-18318"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3659.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3659",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3659.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3659.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3659.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "IBM i: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2023-46143"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2010-2965"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-8065"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2014-9195"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Hitachi Energy"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-8067"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "RTU500"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Sonstiges"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-8066"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3658.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3658",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3658.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3658.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3658.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "Hitachi Energy RTU500: Mehrere Schwachstellen",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   },
+   {
+    "category": [
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?document_category",
+      "term": "csaf_base"
+     },
+     {
+      "scheme": "https://wid.cert-bund.de/portal/wid/csaf/rolie-kategorien#Betriebssysteme",
+      "term": "Linux"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?product_name",
+      "term": "Linux Kernel"
+     },
+     {
+      "scheme": "https://www.cve.org",
+      "term": "CVE-2026-98164"
+     },
+     {
+      "scheme": "https://docs.oasis-open.org/csaf/csaf/v2.0/os/csaf-v2.0-os.html#3122-branches-type---category?vendor",
+      "term": "Open Source"
+     }
+    ],
+    "content": {
+     "src": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3657.json",
+     "type": "application/json"
+    },
+    "format": {
+     "schema": "https://docs.oasis-open.org/csaf/csaf/v2.0/csaf_json_schema.json",
+     "version": "2.0"
+    },
+    "id": "WID-SEC-W-2026-3657",
+    "link": [
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3657.json",
+      "rel": "self"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3657.json.asc",
+      "rel": "signature"
+     },
+     {
+      "href": "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3657.json.sha512",
+      "rel": "hash"
+     }
+    ],
+    "published": "2026-09-29T22:00:00.000+00:00",
+    "title": "Linux Kernel: Schwachstelle ermöglicht Denial of Service",
+    "updated": "2026-09-29T22:00:00.000+00:00"
+   }
+  ]
+ }
+}

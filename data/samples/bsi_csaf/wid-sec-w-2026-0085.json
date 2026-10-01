@@ -1,0 +1,184 @@
+{
+  "document" : {
+    "aggregate_severity" : {
+      "text" : "hoch"
+    },
+    "category" : "csaf_base",
+    "csaf_version" : "2.0",
+    "distribution" : {
+      "tlp" : {
+        "label" : "WHITE",
+        "url" : "https://www.first.org/tlp/"
+      }
+    },
+    "lang" : "de-DE",
+    "notes" : [ {
+      "category" : "legal_disclaimer",
+      "text" : "Das BSI ist als Anbieter für die eigenen, zur Nutzung bereitgestellten Inhalte nach den allgemeinen Gesetzen verantwortlich. Nutzerinnen und Nutzer sind jedoch dafür verantwortlich, die Verwendung und/oder die Umsetzung der mit den Inhalten bereitgestellten Informationen sorgfältig im Einzelfall zu prüfen."
+    }, {
+      "category" : "description",
+      "text" : "FortiOS ist ein gehärtetes Betriebssystem für FortiGate Plattformen.",
+      "title" : "Produktbeschreibung"
+    }, {
+      "category" : "summary",
+      "text" : "Ein entfernter, anonymer Angreifer kann eine Schwachstelle in Fortinet FortiOS ausnutzen, um beliebigen Programmcode auszuführen.",
+      "title" : "Angriff"
+    }, {
+      "category" : "general",
+      "text" : "- Sonstiges",
+      "title" : "Betroffene Betriebssysteme"
+    } ],
+    "publisher" : {
+      "category" : "other",
+      "contact_details" : "csaf-provider@cert-bund.de",
+      "name" : "Bundesamt für Sicherheit in der Informationstechnik",
+      "namespace" : "https://www.bsi.bund.de"
+    },
+    "references" : [ {
+      "category" : "self",
+      "summary" : "WID-SEC-W-2026-0085 - CSAF Version",
+      "url" : "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-0085.json"
+    }, {
+      "category" : "self",
+      "summary" : "WID-SEC-2026-0085 - Portal Version",
+      "url" : "https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-0085"
+    }, {
+      "category" : "external",
+      "summary" : "FortiGuard PSIRT Advisory FG-IR-25-084 vom 2026-01-13",
+      "url" : "https://www.fortiguard.com/psirt/FG-IR-25-084"
+    }, {
+      "category" : "external",
+      "summary" : "Exploit",
+      "url" : "https://socradar.io/blog/cve-2025-25249-pivotc2-fortigate-rat/"
+    } ],
+    "source_lang" : "en-US",
+    "title" : "Fortinet FortiOS: Schwachstelle ermöglicht Codeausführung",
+    "tracking" : {
+      "current_release_date" : "2026-09-09T22:00:00.000+00:00",
+      "generator" : {
+        "date" : "2026-09-10T06:56:34.270+00:00",
+        "engine" : {
+          "name" : "BSI-WID",
+          "version" : "1.6.0"
+        }
+      },
+      "id" : "WID-SEC-W-2026-0085",
+      "initial_release_date" : "2026-01-13T23:00:00.000+00:00",
+      "revision_history" : [ {
+        "date" : "2026-01-13T23:00:00.000+00:00",
+        "number" : "1",
+        "summary" : "Initiale Fassung"
+      }, {
+        "date" : "2026-09-09T22:00:00.000+00:00",
+        "number" : "2",
+        "summary" : "Exploit aufgenommen"
+      } ],
+      "status" : "final",
+      "version" : "2"
+    }
+  },
+  "product_tree" : {
+    "branches" : [ {
+      "branches" : [ {
+        "branches" : [ {
+          "category" : "product_version_range",
+          "name" : "<7.2.12",
+          "product" : {
+            "name" : "Fortinet FortiOS <7.2.12",
+            "product_id" : "1813488"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "7.2.12",
+          "product" : {
+            "name" : "Fortinet FortiOS 7.2.12",
+            "product_id" : "1813488-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/o:fortinet:fortios:7.2.12"
+            }
+          }
+        }, {
+          "category" : "product_version_range",
+          "name" : "<7.4.9",
+          "product" : {
+            "name" : "Fortinet FortiOS <7.4.9",
+            "product_id" : "271C0661-D58E-4867-A88B-806E9E5A58C2"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "7.4.9",
+          "product" : {
+            "name" : "Fortinet FortiOS 7.4.9",
+            "product_id" : "271C0661-D58E-4867-A88B-806E9E5A58C2-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/o:fortinet:fortios:7.4.9"
+            }
+          }
+        }, {
+          "category" : "product_version_range",
+          "name" : "<7.6.4",
+          "product" : {
+            "name" : "Fortinet FortiOS <7.6.4",
+            "product_id" : "4A62EE9F-5F58-433A-AC07-1EC53B913EBB"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "7.6.4",
+          "product" : {
+            "name" : "Fortinet FortiOS 7.6.4",
+            "product_id" : "4A62EE9F-5F58-433A-AC07-1EC53B913EBB-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/o:fortinet:fortios:7.6.4"
+            }
+          }
+        }, {
+          "category" : "product_version_range",
+          "name" : "<7.0.18",
+          "product" : {
+            "name" : "Fortinet FortiOS <7.0.18",
+            "product_id" : "T049226"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "7.0.18",
+          "product" : {
+            "name" : "Fortinet FortiOS 7.0.18",
+            "product_id" : "T049226-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/o:fortinet:fortios:7.0.18"
+            }
+          }
+        }, {
+          "category" : "product_version_range",
+          "name" : "<6.4.17",
+          "product" : {
+            "name" : "Fortinet FortiOS <6.4.17",
+            "product_id" : "T049890"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "6.4.17",
+          "product" : {
+            "name" : "Fortinet FortiOS 6.4.17",
+            "product_id" : "T049890-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/o:fortinet:fortios:6.4.17"
+            }
+          }
+        } ],
+        "category" : "product_name",
+        "name" : "FortiOS"
+      } ],
+      "category" : "vendor",
+      "name" : "Fortinet"
+    } ]
+  },
+  "vulnerabilities" : [ {
+    "cve" : "CVE-2025-25249",
+    "product_status" : {
+      "known_affected" : [ "1813488", "T049890", "271C0661-D58E-4867-A88B-806E9E5A58C2", "T049226", "4A62EE9F-5F58-433A-AC07-1EC53B913EBB" ]
+    },
+    "release_date" : "2026-01-13T23:00:00.000+00:00",
+    "title" : "CVE-2025-25249"
+  } ]
+}
