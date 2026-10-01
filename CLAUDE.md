@@ -1,0 +1,62 @@
+# CLAUDE.md – project conventions
+
+Schwachstellen-Radar: BSI advisories → match against customer inventories →
+deterministic priority → German drafts → analyst approval in n8n.
+Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
+
+## Hard rules
+
+- **Never `git commit` or `git push`.** Leave changes uncommitted. At the end of each
+  phase give: summary, full `git status --porcelain`, suggested commit grouping.
+- **Never invent API fields or formats.** Check `data/samples/` first; if something is
+  missing, fetch a real sample. Reality beats the brief, so report differences.
+- **Phases end with a stop.** Wait for Matteo's OK before starting the next phase.
+- No secrets in files. `.env` is gitignored; new variables go into `.env.example`.
+- No EUVD data in git (D-008).
+
+## Language
+
+- Code, comments, commit messages, docs in `docs/`: **English**.
+- Anything a user or customer sees (tickets, notices, dashboard, approval mails,
+  README intro, `make ingest` summary): **German**.
+
+## Code style
+
+- Simple and explicit over clever. Matteo must be able to explain every line live.
+- Comment *why*, not *what*.
+- Plain SQL with psycopg, no ORM (D-014).
+- LLM calls only in `radar/llm/`, never in n8n AI nodes (D-012). Model names from env.
+- Priority is computed in code from `config/scoring.yaml`. The LLM never decides it.
+- When unsure (thresholds, legal points, vendor versioning quirks): make it
+  configurable, write it down as an ASSUMPTION in `docs/DECISIONS.md`, and flag it.
+- Ambiguous version / release-line matches → `needs_review`, never a guess (D-005).
+
+## Keep these files current
+
+- `docs/DECISIONS.md`: one entry per non-trivial decision (D-NNN).
+- `docs/LEARNING.md`: per component, a plain explanation plus 3–5 interview Q&As.
+- `data/samples/README.md`: provenance of every sample.
+
+## Environment
+
+- Windows host: Python 3.10, `mingw32-make`, no GNU make. Every Makefile target must
+  also work as `python scripts/tasks.py <target>` (stdlib only, Python 3.10-compatible).
+- Service code runs in Docker (Python 3.12, uv). Open files with `encoding="utf-8"`
+  (the Windows default codepage garbles German umlauts).
+- Local LLM: host Ollama at `http://host.docker.internal:11434`.
+
+## Layout
+
+```
+radar/            Python package (api/, sources/, versions/, inventory/, match/, score/, llm/, drafting/, db/, dashboard/)
+db/init/          Postgres init: creates schemas n8n + radar
+prompts/          versioned prompt files
+config/           scoring.yaml, vendor_aliases.yaml, roi_assumptions.yaml, llm_prices.yaml
+data/samples/     real API samples (committed, except EUVD)
+data/snapshots/   daily raw pulls (gitignored); demo/ is the one committed snapshot
+data/inventory/   synthetic customer inventories + labels.json
+n8n/workflows/    exported workflow JSON
+eval/             datasets, runner, report
+scripts/          tasks.py (task runner) and one-off helpers
+docs/             ARCHITECTURE, DECISIONS, LEARNING, DEMO
+```
