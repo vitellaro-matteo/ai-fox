@@ -1,0 +1,37 @@
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Data: daily raw pulls and local caches stay local ---
+# Only the curated demo snapshot is committed (see docs/DECISIONS.md, D-007).
+data/snapshots/*
+!data/snapshots/demo/
+data/cache/
+# EUVD publishes no reuse licence, so none of its data is committed (D-008):
+# not in the demo snapshot and not the parser samples either.
+data/snapshots/demo/euvd/
+data/samples/euvd/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# --- Eval run artefacts (the report and charts are committed, raw runs are not) ---
+eval/runs/
+
+# --- Tooling / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
