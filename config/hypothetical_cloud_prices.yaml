@@ -1,0 +1,20 @@
+# HYPOTHETICAL ESTIMATE ONLY.
+# The real LLM cost of this project is 0 EUR (local Ollama, Groq free tier).
+# These public list prices only feed the "what would this cost in a paid cloud?"
+# line of `make stats` and the eval report. Every number shown from this file
+# must be labeled as a hypothetical estimate.
+#
+# This file is optional: without it, the estimate is simply left out.
+
+source: "https://console.groq.com/docs/models (public list prices, read 2026-10-01)"
+currency: USD
+# ASSUMPTION: rough conversion for the slides; adjust before presenting.
+usd_to_eur: 0.90
+
+models:
+  openai/gpt-oss-20b:
+    input_per_million_tokens: 0.075
+    output_per_million_tokens: 0.30
+  openai/gpt-oss-120b:
+    input_per_million_tokens: 0.15
+    output_per_million_tokens: 0.60
