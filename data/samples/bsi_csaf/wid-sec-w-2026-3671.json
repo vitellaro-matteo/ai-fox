@@ -1,0 +1,161 @@
+{
+  "document" : {
+    "aggregate_severity" : {
+      "text" : "mittel"
+    },
+    "category" : "csaf_base",
+    "csaf_version" : "2.0",
+    "distribution" : {
+      "tlp" : {
+        "label" : "WHITE",
+        "url" : "https://www.first.org/tlp/"
+      }
+    },
+    "lang" : "de-DE",
+    "notes" : [ {
+      "category" : "legal_disclaimer",
+      "text" : "Das BSI ist als Anbieter für die eigenen, zur Nutzung bereitgestellten Inhalte nach den allgemeinen Gesetzen verantwortlich. Nutzerinnen und Nutzer sind jedoch dafür verantwortlich, die Verwendung und/oder die Umsetzung der mit den Inhalten bereitgestellten Informationen sorgfältig im Einzelfall zu prüfen."
+    }, {
+      "category" : "description",
+      "text" : "Moodle ist ein Software-Paket, um internetbasierte Kurse zu entwickeln und durchzuführen. Es ist ein globales Softwareentwicklungsprojekt, das einen konstruktivistischen Lehr- und Lernansatz unterstützt.",
+      "title" : "Produktbeschreibung"
+    }, {
+      "category" : "summary",
+      "text" : "Ein entfernter, authentisierter Angreifer kann mehrere Schwachstellen in Moodle ausnutzen, um Sicherheitsvorkehrungen zu umgehen und um eine SQL-Injection auszuführen.",
+      "title" : "Angriff"
+    }, {
+      "category" : "general",
+      "text" : "- Linux\n- Sonstiges\n- UNIX\n- Windows",
+      "title" : "Betroffene Betriebssysteme"
+    } ],
+    "publisher" : {
+      "category" : "other",
+      "contact_details" : "csaf-provider@cert-bund.de",
+      "name" : "Bundesamt für Sicherheit in der Informationstechnik",
+      "namespace" : "https://www.bsi.bund.de"
+    },
+    "references" : [ {
+      "category" : "self",
+      "summary" : "WID-SEC-W-2026-3671 - CSAF Version",
+      "url" : "https://wid.cert-bund.de/.well-known/csaf/white/2026/wid-sec-w-2026-3671.json"
+    }, {
+      "category" : "self",
+      "summary" : "WID-SEC-2026-3671 - Portal Version",
+      "url" : "https://wid.cert-bund.de/portal/wid/securityadvisory?name=WID-SEC-2026-3671"
+    }, {
+      "category" : "external",
+      "summary" : "Moodle Security Advisory MSA-26-0042 vom 2026-09-29",
+      "url" : "https://moodle.org/mod/forum/discuss.php?d=482607"
+    }, {
+      "category" : "external",
+      "summary" : "Moodle Security Advisory MSA-26-0043 vom 2026-09-29",
+      "url" : "https://moodle.org/mod/forum/discuss.php?d=482608"
+    } ],
+    "source_lang" : "en-US",
+    "title" : "Moodle: Mehrere Schwachstellen",
+    "tracking" : {
+      "current_release_date" : "2026-09-29T22:00:00.000+00:00",
+      "generator" : {
+        "date" : "2026-09-30T11:51:33.423+00:00",
+        "engine" : {
+          "name" : "BSI-WID",
+          "version" : "1.6.0"
+        }
+      },
+      "id" : "WID-SEC-W-2026-3671",
+      "initial_release_date" : "2026-09-29T22:00:00.000+00:00",
+      "revision_history" : [ {
+        "date" : "2026-09-29T22:00:00.000+00:00",
+        "number" : "1",
+        "summary" : "Initiale Fassung"
+      } ],
+      "status" : "final",
+      "version" : "1"
+    }
+  },
+  "product_tree" : {
+    "branches" : [ {
+      "branches" : [ {
+        "branches" : [ {
+          "category" : "product_version_range",
+          "name" : "<4.5.14",
+          "product" : {
+            "name" : "Open Source Moodle <4.5.14",
+            "product_id" : "T060441"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "4.5.14",
+          "product" : {
+            "name" : "Open Source Moodle 4.5.14",
+            "product_id" : "T060441-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/a:open_source:moodle:4.5.14"
+            }
+          }
+        }, {
+          "category" : "product_version_range",
+          "name" : "<5.0.10",
+          "product" : {
+            "name" : "Open Source Moodle <5.0.10",
+            "product_id" : "T060442"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "5.0.10",
+          "product" : {
+            "name" : "Open Source Moodle 5.0.10",
+            "product_id" : "T060442-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/a:open_source:moodle:5.0.10"
+            }
+          }
+        }, {
+          "category" : "product_version_range",
+          "name" : "<5.1.7",
+          "product" : {
+            "name" : "Open Source Moodle <5.1.7",
+            "product_id" : "T060443"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "5.1.7",
+          "product" : {
+            "name" : "Open Source Moodle 5.1.7",
+            "product_id" : "T060443-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/a:open_source:moodle:5.1.7"
+            }
+          }
+        }, {
+          "category" : "product_version_range",
+          "name" : "<5.2.3",
+          "product" : {
+            "name" : "Open Source Moodle <5.2.3",
+            "product_id" : "T060444"
+          }
+        }, {
+          "category" : "product_version",
+          "name" : "5.2.3",
+          "product" : {
+            "name" : "Open Source Moodle 5.2.3",
+            "product_id" : "T060444-fixed",
+            "product_identification_helper" : {
+              "cpe" : "cpe:/a:open_source:moodle:5.2.3"
+            }
+          }
+        } ],
+        "category" : "product_name",
+        "name" : "Moodle"
+      } ],
+      "category" : "vendor",
+      "name" : "Open Source"
+    } ]
+  },
+  "vulnerabilities" : [ {
+    "product_status" : {
+      "known_affected" : [ "T060441", "T060444", "T060443", "T060442" ]
+    },
+    "release_date" : "2026-09-29T22:00:00.000+00:00"
+  } ]
+}

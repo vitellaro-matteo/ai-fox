@@ -1,0 +1,25 @@
+{
+  "_comment": "HAND-WRITTEN, NOT REAL DATA. Field names and value formats copied from a real EUVD /api/enisaid response on 2026-10-01; all values are neutral placeholders. Real EUVD data is not committed (docs/DECISIONS.md, D-008).",
+  "id": "EUVD-2000-0001",
+  "enisaUuid": "00000000-0000-0000-0000-000000000000",
+  "description": "Placeholder description.",
+  "datePublished": "Jan 1, 2000, 12:00:00 PM",
+  "dateUpdated": "Jan 2, 2000, 12:00:00 PM",
+  "baseScore": 7.4,
+  "baseScoreVersion": "3.1",
+  "baseScoreVector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "references": "https://example.invalid/advisory\n",
+  "aliases": "CVE-2000-0001\nGHSA-0000-0000-0000\n",
+  "assigner": "example",
+  "epss": 3.86,
+  "enisaIdProduct": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "product": {"name": "ExampleProduct", "vendor": {"name": "ExampleVendor"}},
+      "product_version": "1.0.0 ≤1.0.7"
+    }
+  ],
+  "enisaIdVendor": [
+    {"id": "00000000-0000-0000-0000-000000000002", "vendor": {"name": "ExampleVendor"}}
+  ]
+}

@@ -17,6 +17,8 @@ instead.
 | `bsi_csaf/wid-sec-w-2026-3268.json` | …/white/2026/wid-sec-w-2026-3268.json | Exchange Server: CU encoded in the product name. |
 | `bsi_csaf/wid-sec-w-2026-3463.json` | …/white/2026/wid-sec-w-2026-3463.json | Synology DSM, versions like `7.3.2-86009-4`. |
 | `bsi_csaf/wid-sec-w-2026-3674.json` | …/white/2026/wid-sec-w-2026-3674.json | poppler: `last_affected` status, `<=` range, `-fixed` node with a range name. |
+| `bsi_csaf/wid-sec-w-2026-3605.json` | …/white/2026/wid-sec-w-2026-3605.json | Red Hat: nested `product_name > product_name` branch. |
+| `bsi_csaf/wid-sec-w-2026-3671.json` | …/white/2026/wid-sec-w-2026-3671.json | Moodle: a vulnerability entry with no CVE. |
 | `kev/kev.excerpt.json` | https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json | Header + first 30 of 1,730 entries. |
 | `epss/epss_batch.json` | https://api.first.org/data/v1/epss?cve=… | 5 CVEs requested, 4 returned: unknown CVEs are silently omitted. |
 | `euvd/*` | https://euvdservices.enisa.europa.eu/api/… | **Gitignored** (no reuse licence, see D-008). |
