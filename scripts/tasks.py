@@ -1,6 +1,11 @@
 """Task runner behind every Makefile target.
 
-Usage:  python scripts/tasks.py <task>      (same as: make <task>)
+Usage:  python scripts/tasks.py <task> [options]     (same as: make <task> ARGS="options")
+
+Examples:
+    python scripts/tasks.py ingest                  daily pull, last 3 days
+    python scripts/tasks.py ingest --days 90        first fill
+    python scripts/tasks.py ingest --offline data/snapshots/2026-10-01
 
 Why this exists: Windows has no GNU make by default, so each Makefile target
 only forwards to this file. It uses the standard library only and runs on the
@@ -29,7 +34,8 @@ def compose(*args: str) -> int:
 
 def in_api(*args: str) -> int:
     # Runs a command inside the already running radar-api container.
-    return compose("exec", "radar-api", *args)
+    # -T: no terminal needed, so this also works from make and from n8n.
+    return compose("exec", "-T", "radar-api", *args)
 
 
 def not_yet(phase: int):
@@ -69,6 +75,14 @@ def test() -> int:
     ])
 
 
+def ingest() -> int:
+    return in_api("python", "-m", "radar.cli", "ingest", *EXTRA_ARGS)
+
+
+def migrate() -> int:
+    return in_api("python", "-m", "radar.cli", "migrate")
+
+
 def lock() -> int:
     # Regenerates uv.lock without needing uv on the host.
     if shutil.which("uv"):
@@ -76,13 +90,17 @@ def lock() -> int:
     return run(["docker", "run", "--rm", "-v", f"{ROOT}:/src", "-w", "/src", UV_IMAGE, "uv", "lock"])
 
 
+# Options after the task name, passed on to the command (e.g. --days 90).
+EXTRA_ARGS: list[str] = sys.argv[2:]
+
 TASKS = {
     "up": up,
     "down": down,
     "logs": logs,
     "test": test,
     "lock": lock,
-    "ingest": not_yet(1),
+    "ingest": ingest,
+    "migrate": migrate,
     "seed": not_yet(2),
     "import-workflows": not_yet(3),
     "export-workflows": not_yet(3),
@@ -99,7 +117,7 @@ def main() -> int:
         print(__doc__)
         print("Tasks: " + ", ".join(TASKS))
         return 0
-    if len(sys.argv) != 2 or sys.argv[1] not in TASKS:
+    if sys.argv[1] not in TASKS:
         print("Unknown task. Tasks: " + ", ".join(TASKS), file=sys.stderr)
         return 1
     return TASKS[sys.argv[1]]()

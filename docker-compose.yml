@@ -90,6 +90,8 @@ services:
       # Mounted rather than baked in: snapshots, samples and prompts change
       # during development and must survive container rebuilds.
       - ./data:/app/data
+      # The source is mounted too, so a code change needs no image rebuild.
+      - ./radar:/app/radar:ro
       - ./config:/app/config:ro
       - ./prompts:/app/prompts:ro
       - ./eval:/app/eval
