@@ -30,6 +30,13 @@ Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
   Groq free tier (option B; dev and eval only). No paid API. Missing `GROQ_API_KEY`
   means fall back to Ollama without an error. The live demo never calls Groq (D-015).
 - Same prompts, same JSON schema, same Pydantic validation for every provider.
+  Validation fails: retry once, then `needs_review` (D-022).
+- LLM calls are the last resort: prefilter, deterministic check, cache by input hash,
+  revision diff first. Log how many calls each stage avoided (D-023).
+- Tickets and notices come from deterministic templates. The LLM writes only the short
+  German summary. Every fact must come from the advisory or the inventory (D-021).
+- Real cost is 0 EUR. Cloud cost appears only as a labeled hypothetical estimate (D-024).
+- All HTTP to data sources goes through `radar/sources/fetcher.py` (snapshots, D-020).
 - Priority is computed in code from `config/scoring.yaml`. The LLM never decides it.
 - When unsure (thresholds, legal points, vendor versioning quirks): make it
   configurable, write it down as an ASSUMPTION in `docs/DECISIONS.md`, and flag it.
@@ -53,10 +60,10 @@ Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
 ## Layout
 
 ```
-radar/            Python package (api/, sources/, versions/, inventory/, match/, score/, llm/, drafting/, db/, dashboard/)
+radar/            Python package (cli.py, ingest.py, api/, sources/, versions/, inventory/, match/, score/, llm/, drafting/, db/, dashboard/)
 db/init/          Postgres init: creates schemas n8n + radar
 prompts/          versioned prompt files
-config/           scoring.yaml, vendor_aliases.yaml, roi_assumptions.yaml, llm_prices.yaml
+config/           scoring.yaml, vendor_aliases.yaml, roi_assumptions.yaml, hypothetical_cloud_prices.yaml
 data/samples/     real API samples (committed, except EUVD)
 data/snapshots/   daily raw pulls (gitignored); demo/ is the one committed snapshot
 data/inventory/   synthetic customer inventories + labels.json

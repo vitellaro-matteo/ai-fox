@@ -97,3 +97,46 @@ and the report says how often a limit was hit.
 **Q: What if Groq is down during the live demo?**
 A: Nothing happens, because the demo never calls it. The demo's LLM results were
 computed beforehand and are replayed from a cache.
+
+## 4. Ingestion
+
+**In plain words.** Every morning the service asks four public sources what is new and
+stores the answers. From BSI it reads a list (the "feed") of all advisories with the
+date each was last changed, and downloads only those it doesn't have in that state
+yet. Then it adds three facts per vulnerability: is it exploited (KEV), how likely is
+exploitation (EPSS), how severe is it (CVSS, from EUVD). Every downloaded file is also
+written to a dated folder, so the same day can be replayed later without the internet.
+
+**Q: What does "idempotent" mean here, and how did you check it?**
+A: Running the ingest twice gives the same database as running it once. An advisory
+revision is identified by its ID plus version number; a revision we already have is
+skipped. I checked it by running the same ingest twice and comparing row counts: the
+second run stored nothing new and did not download a single document again.
+
+**Q: How do you handle an advisory that gets updated?**
+A: Each revision is a new row; the old one stays and is marked as not the latest.
+Keeping the old revision is what later allows a diff: which products were added by
+this update? Only those need to be checked again.
+
+**Q: How do you know the offline demo shows the same thing as a live run?**
+A: Both use the same code. One small class does all HTTP: in live mode it saves each
+response to disk before parsing it, in offline mode it reads that file instead. I
+emptied the tables, replayed a snapshot with the network unused, and got identical
+row counts with zero HTTP requests.
+
+**Q: Why don't you fetch CVSS scores for every CVE?**
+A: Ninety days of advisories contain about 35,000 different CVEs, and EUVD answers one
+CVE per request. A score only matters when an advisory actually touches a customer
+system, so scores are fetched on demand and remembered. EPSS allows 100 CVEs per
+request, so there we simply fetch all.
+
+**Q: What does "being a good citizen" towards these APIs mean in code?**
+A: A User-Agent that names the tool and a contact, at least half a second between two
+requests to the same host, timeouts, at most four attempts with growing waits, and no
+retry on errors that won't go away (like a 403). The 45 MB BSI feed is downloaded only
+when it has changed (the server tells us through an ETag).
+
+**Q: What if one source is down in the morning?**
+A: The run continues. A failed document or source is listed under "Probleme" in the
+summary and recorded with the run. KEV keeps yesterday's catalog, and a missing CVSS
+later falls back to BSI's own text rating.

@@ -16,19 +16,20 @@ Der Schwachstellen-Radar übernimmt die Routine:
    jedes Kunden.
 3. **Priorisieren:** Die Priorität folgt festen, nachvollziehbaren Regeln. Jede
    Einstufung ist begründet.
-4. **Entwerfen:** Er schreibt ein Techniker-Ticket und eine Kundeninformation auf
-   Deutsch.
+4. **Entwerfen:** Er erstellt ein Techniker-Ticket und eine Kundeninformation auf
+   Deutsch, aus festen Vorlagen und geprüften Daten.
 5. **Freigeben:** Ein Analyst prüft und gibt mit einem Klick frei. Nichts geht ohne
    Freigabe an Kunden.
 6. **Nachweisen:** Jede Entscheidung wird protokolliert, als Nachweis für das
    Schwachstellenmanagement nach NIS2 (§ 30 Abs. 2 Nr. 5 BSIG).
 
 **Die Rolle der KI:** Sie übersetzt unscharfe Inventareinträge („Forti 60F FW 7.2.5“)
-und Hinweistexte in Struktur. Sie entscheidet **nicht** über die Priorität, handelt
+in Struktur und schreibt eine kurze, verständliche Zusammenfassung. Sie entscheidet **nicht** über die Priorität, handelt
 auf keinem System und versendet nichts. *Die KI übersetzt, der Code entscheidet, der
 Mensch gibt frei.*
 
-> Status: Phase 0 (Grundgerüst). Die Kundendaten sind fiktiv, die Sicherheitshinweise
+> Status: Phase 1 (Erfassung). Es entstehen keine laufenden Kosten: Das Sprachmodell
+> läuft lokal. Die Kundendaten sind fiktiv, die Sicherheitshinweise
 > sind echt.
 
 ---
@@ -59,7 +60,15 @@ Every task works in two equivalent ways:
 | Run the tests | `mingw32-make test` | `python scripts/tasks.py test` |
 | List all tasks | `mingw32-make help` | `python scripts/tasks.py` |
 
-Later phases add `ingest`, `seed`, `demo`, `demo-offline`, `eval`, `stats`, `reset`.
+Pulling advisories:
+
+| Task | With make | Without make |
+|---|---|---|
+| Daily pull (last 3 days) | `mingw32-make ingest` | `python scripts/tasks.py ingest` |
+| First fill (last 90 days, about 30 min) | `mingw32-make ingest ARGS="--days 90"` | `python scripts/tasks.py ingest --days 90` |
+| Replay a snapshot, no network | `mingw32-make ingest ARGS="--offline data/snapshots/2026-10-01"` | `python scripts/tasks.py ingest --offline data/snapshots/2026-10-01` |
+
+Later phases add `seed`, `demo`, `demo-offline`, `eval`, `stats`, `reset`.
 Until then they print which phase will add them.
 
 Then open:

@@ -16,7 +16,7 @@ flowchart LR
 
     subgraph stack["docker compose (local)"]
         N8N["n8n<br/>process: schedule, branching,<br/>waiting for approval, retries"]
-        API["radar-api (FastAPI)<br/>ingest · match · score ·<br/>LLM · drafts · dashboard"]
+        API["radar-api (FastAPI)<br/>ingest · match · score ·<br/>LLM · templates · dashboard"]
         PG[("Postgres<br/>schema n8n<br/>schema radar")]
         MAIL["Mailpit<br/>catches every mail"]
     end
@@ -51,7 +51,7 @@ flowchart TD
     F -->|confident| G["Decision + audit record"]
     F -->|low confidence / unknown| R["needs_review queue"]
     G -->|affected| S["Deterministic priority P1–P4<br/>KEV · EPSS · CVSS · exposure · criticality"]
-    S --> T["German drafts: ticket + customer notice"]
+    S --> T["Ticket + customer notice from templates<br/>LLM adds only a short German summary"]
     T --> U["n8n: approval mail to analyst"]
     R --> U
     U -->|approved| V["Ticket in radar.tickets<br/>+ customer notice to Mailpit"]
@@ -63,8 +63,8 @@ flowchart TD
 | Component | Owns | Does not do |
 |---|---|---|
 | n8n | Scheduling, branching, waiting for the human, retries, error workflow, notifications | Business logic, LLM calls, SQL on `radar` tables |
-| radar-api | Ingestion, normalization, matching, scoring, LLM calls, drafts, dashboard, eval | Sending mail to customers (n8n does it, after approval) |
-| LLM | Language → structure: fuzzy product matching, German summaries, draft texts | Priority, sending, any action on a system |
+| radar-api | Ingestion, normalization, matching, scoring, LLM calls, ticket and notice templates, dashboard, eval | Sending mail to customers (n8n does it, after approval) |
+| LLM | Language → structure: fuzzy product matching; one short German plain-language summary per advisory | Priority, sending, any action on a system |
 | Analyst | The final decision for every ticket and every customer notice | – |
 
 ## Where the trust boundaries are

@@ -112,8 +112,9 @@ uncommitted cache.
 **Trade-off.** A clean clone cannot run the offline demo with exact EUVD scores
 until one online run has filled the cache. Without the cache the BSI fallback (D-002)
 applies, and the dashboard shows this.
-**Open point.** EUVD parser tests need a committed fixture. Proposal: a hand-written
-fixture with the real field names and formats but neutral values, marked as such.
+**EUVD parser tests.** The committed fixture `tests/fixtures/euvd_record_synthetic.json`
+is hand-written: real field names and formats, neutral values, and marked as such. A
+second test runs against the real local sample when it exists and is skipped otherwise.
 
 ## D-009 – One task runner for make and plain Python
 *2026-09-30 · approved by Matteo*
@@ -199,9 +200,9 @@ locally with Ollama, or on Groq's free tier (no credit card).
 **Trade-off.** Local inference is slower, and on a 16 GB laptop the model choice is
 tight (D-016). Development would be painfully slow without Groq, which is why it stays
 as option B.
-**Open point.** The kickoff brief named the Anthropic API as the default provider. The
-zero-cost plan replaces it. A paid provider can be added later behind the same
-interface; nothing in the design prevents it.
+**Confirmed by Matteo on 2026-10-01:** no paid API at all. The Anthropic API named in
+the kickoff brief is out. The provider abstraction stays, but only Ollama and Groq are
+implemented and tested.
 
 ## D-016 – One open-weight model for both providers: gpt-oss-20b (fit on 16 GB unproven)
 *2026-10-01 · model choice needs Matteo's confirmation after a fit test*
@@ -264,3 +265,79 @@ disagreements), latency per call for each, and the cost: 0 EUR for both.
 **Caveat to state on the slide.** "Same model" means the same published weights. Groq
 and Ollama may use different quantization and different default settings, so small
 differences in the answers are expected, and the agreement rate measures exactly that.
+
+## D-019 – CVSS is fetched on demand, not for every CVE
+*2026-10-01*
+
+**Context.** The 90-day window holds about 35,000 distinct CVEs (single Linux-kernel
+advisories list up to 850). EUVD answers one CVE per request (`/api/enisaid?id=CVE-…`;
+the search endpoint caps a page at 100 records and cannot filter by a CVE list).
+35,000 requests against a free public service would be neither polite nor useful: a
+score only matters for an advisory that touches a customer.
+**Choice.** `ensure_cvss()` looks up only CVEs that have no stored answer yet. Phase 1
+calls it for the KEV-listed CVEs of the ingest window. From phase 2 on, matching calls
+it for the CVEs of advisories that affect at least one asset. "EUVD has no score" is
+stored too, so the same CVE is not asked again.
+**Trade-off.** Statistics over all advisories cannot use CVSS; they use BSI's text
+rating instead. EPSS has no such limit (100 CVEs per request), so it is fetched for
+every CVE in the window.
+**Detail.** EUVD answers an unknown CVE with HTTP 204 and an empty body, not with 404.
+
+## D-020 – Snapshots are written by the same code that reads them
+*2026-10-01*
+
+**Choice.** One small class (`radar/sources/fetcher.py`) does all HTTP. In live mode it
+writes every response to `data/snapshots/YYYY-MM-DD/` before parsing it. In offline mode
+it reads those files and makes no request. Parsing and storing are identical in both
+modes. Verified: replaying a snapshot into empty tables gave the same row counts as the
+live run, with 0 HTTP requests.
+**Details.**
+- The WID feed is 45 MB. It is downloaded with a conditional request (ETag) into
+  `data/cache/`; the snapshot only keeps the entries inside the time window.
+- A document is downloaded only if our stored revision is older than the feed's
+  `updated` date. A daily snapshot is therefore incremental: it holds what was new that
+  day. The committed demo snapshot (phase 5) will be exported as a complete set.
+- The SHA-512 and signature files that BSI offers per document are not checked. TLS to
+  the BSI server is the integrity guarantee here; checking would double the requests.
+
+## D-021 – Tickets and notices come from templates; the LLM writes only a short summary
+*2026-10-01 · decided by Matteo (zero-cost plan)*
+
+**Context.** The kickoff brief had the LLM draft both texts. A small local model is
+slower and less reliable at long German text than at short structured answers.
+**Choice.** The technician ticket and the customer notice are built from deterministic
+templates filled with structured data (affected systems, priority and its explanation,
+fixed versions, source links). The LLM contributes one thing: a short plain-language
+German summary of the advisory. Every fact must come from the advisory or the inventory.
+**Trade-off.** The texts read more uniform. In return they cannot contain an invented
+version number or measure, they cost almost no inference time, and the same input
+always gives the same ticket.
+
+## D-022 – Structured output, validated; one retry, then `needs_review`
+*2026-10-01 · decided by Matteo (zero-cost plan)*
+
+Every LLM call asks for JSON that follows a JSON schema (Groq: `response_format` with
+`json_schema` and `strict: true`; Ollama: the `format` parameter with the same schema).
+The answer is validated with the same Pydantic model for both providers. If validation
+fails, the call is repeated once. If it fails again, the case becomes `needs_review`
+with the reason recorded. The pipeline never guesses and never drops the case.
+
+## D-023 – LLM calls are the last resort, and every avoided call is counted
+*2026-10-01 · decided by Matteo (zero-cost plan)*
+
+Order of work for each advisory × asset pair: (1) the vendor/product prefilter removes
+pairs that cannot match, (2) the deterministic version check decides what it can,
+(3) the cache answers pairs whose input hash was seen before, (4) the revision diff
+reuses decisions for unchanged products (D-007). Only what is left goes to the LLM.
+Each stage logs how many pairs it settled, so the report can state "of N pairs, the LLM
+saw M". With Groq's free tier allowing roughly 200 calls a day (D-017), this is also
+what makes the eval feasible.
+
+## D-024 – Real cost is 0 EUR; a cloud cost is shown only as a labeled estimate
+*2026-10-01 · decided by Matteo (zero-cost plan)*
+
+Token counts are logged for every call. The real cost is always reported as 0 EUR.
+`config/hypothetical_cloud_prices.yaml` holds public list prices; with it, the stats and
+the eval report add a line "what this would cost in a paid cloud", labeled as a
+hypothetical estimate, with the price source next to it. The file is optional. The
+EUR/USD rate in it is an **ASSUMPTION** to adjust.
