@@ -153,14 +153,20 @@ retries, notifications. Model names come from `OLLAMA_MODEL` / `GROQ_MODEL` (see
 **Trade-off.** The n8n canvas shows an HTTP call instead of a visible "AI" node. The
 slide has to explain where the AI sits.
 
-## D-013 – Hard cost cap per eval run
-*2026-09-30 · approved by Matteo*
+## D-013 – Cap on Groq requests per eval run (replaces the euro cost cap)
+*2026-09-30 · revised 2026-10-03 by Matteo*
 
-`EVAL_COST_CAP_EUR` (default 5). The eval runner adds up the estimated cost after
-every LLM call and aborts the run when the cap is reached. Spend is logged per run.
-Prices live in config, so the cap is only as accurate as those prices. Since D-015
-both configured providers cost 0 EUR, so the cap only matters if a paid provider is
-added later. It stays in, because "we forgot the cap" is a bad surprise.
+**Context.** The first version of this entry was a hard cost cap in euros. Since the
+zero-cost plan (D-015) the real cost is always 0 EUR, so a euro cap can never trigger
+and only confuses.
+**Choice.** `EVAL_GROQ_MAX_REQUESTS` (default 200) limits how many Groq requests one eval
+run may make. When the cap is reached, the run stops cleanly and can be resumed later
+(D-017). The number of requests used is logged per run.
+**Why 200.** **ASSUMPTION:** Groq's free tier allows 1,000 requests and 200,000 tokens
+per day for the model; at roughly 1,000 tokens per call the token limit is reached after
+about 200 calls. The default keeps one run inside one day's free budget and leaves the
+rest of the day's requests for development. Adjust it once phase 2 has measured the real
+tokens per call.
 
 ## D-014 – Plain SQL and psycopg instead of an ORM
 *2026-09-30*
@@ -204,33 +210,36 @@ as option B.
 the kickoff brief is out. The provider abstraction stays, but only Ollama and Groq are
 implemented and tested.
 
-## D-016 – One open-weight model for both providers: gpt-oss-20b (fit on 16 GB unproven)
-*2026-10-01 · model choice needs Matteo's confirmation after a fit test*
+## D-016 – Models: gpt-oss-20b on Groq, a small model (at most about 4 GB) locally
+*2026-10-01 · revised 2026-10-03 by Matteo after the fit test (D-025)*
 
-**Context.** For the "same model, cloud or on-premise" comparison, the model must exist
-on Groq's free tier and in the Ollama library. Checked on 2026-10-01:
+**Context.** The first plan was one open-weight model on both sides, for a "same model,
+cloud or on-premise" comparison. Checked on 2026-10-01:
 - Groq free-tier chat models: `openai/gpt-oss-20b`, `openai/gpt-oss-120b`,
   `openai/gpt-oss-safeguard-20b`, `qwen/qwen3.8-27b` (preview). The Llama models are
   listed with enterprise pricing only and are not in the free rate-limit table.
 - Strict JSON-schema output on Groq: `gpt-oss-20b`, `gpt-oss-120b`, `qwen3.8-27b`.
-- Ollama: `gpt-oss:20b` is a 14 GB download; `gpt-oss:120b` is 65 GB.
+- Ollama: `gpt-oss:20b` is a 14 GB download; it is the smallest model on both sides.
 
-**Choice.** `openai/gpt-oss-20b` on Groq and `gpt-oss:20b` on Ollama. It is the smallest
-model that exists on both sides, and the only realistic one for a laptop.
-**Risk, not yet resolved.** Matteo's laptop has 16 GB RAM, a Ryzen 5 3600, and a
-Radeon RX 5700, which is not on Ollama's list of supported AMD cards for Windows (that
-list starts at the RX 7000 series; newer Ollama versions may use it through Vulkan). A
-14 GB model next to Windows and the Docker stack (WSL2 may take up to 8 GB) will very
-likely not fit in memory at the same time. Drive C: also has only 10 GB free, so the
-model cannot even be downloaded to the default folder.
-**Plan.** Test before building on it: (1) move the Ollama model folder to D: or E:,
-(2) update Ollama from 0.17.1, (3) pull the model, (4) measure load time, memory and
-seconds per call with the stack stopped and with it running.
-**Fallbacks if it does not fit.**
-- (a) Run the local half of the comparison with the Docker stack stopped. The eval only
-  needs the frozen pairs and the model, and the demo uses cached results anyway.
-- (b) Give up "same model": Groq `gpt-oss-20b` versus a smaller local model. The slide
-  then compares two different models, which is a weaker statement.
+**What happened.** `gpt-oss:20b` does not run on Matteo's machine (measured numbers in
+D-025). His second machine, a laptop, is likely no stronger.
+**Choice.**
+- **Groq (development and eval): `openai/gpt-oss-20b`.** Unchanged.
+- **Local (default provider): a small model**, at most about 4 GB download, that fits
+  completely into the GPU (8 GB VRAM) or into about 3 GB of RAM. Candidates, sizes from
+  the Ollama library on 2026-10-03: `gemma3:4b` (3.3 GB), `qwen3:4b` (2.5 GB),
+  `granite4.2:3b` (2.2 GB), `phi4-mini` (2.5 GB). Selection criteria: correct decisions
+  on the smoke cases, valid JSON every time, understandable German reasoning, seconds per
+  call. None of the model pages states German support explicitly, so it is measured.
+  **The choice is open until the candidates have been tested** with
+  `scripts/model_fit_test.py`.
+- `gpt-oss:20b` is dropped locally. Models are stored on C: (SSD), not on the hard disk.
+
+**Trade-off.** "Same model on both sides" is gone. The comparison becomes "large open
+model in the cloud versus small open model on a normal laptop" (D-018), which is closer
+to what a Mittelstand customer would really face, but the local model will make more
+mistakes. The design absorbs that: low confidence goes to `needs_review`, and the
+deterministic stage decides most pairs before any model is asked (D-023).
 
 ## D-017 – Eval runner respects Groq's free-tier rate limits
 *2026-10-01 · decided by Matteo*
@@ -250,21 +259,30 @@ tokens count too. Phase 2 measures the real number.)
 - Every finished pair is written to the database at once, so an interrupted run
   continues where it stopped. A run can therefore be spread over several days.
 - The run report states how often a limit was hit and how long the run waited in total.
+- One run makes at most `EVAL_GROQ_MAX_REQUESTS` requests (D-013), then stops cleanly
+  and can be resumed.
 
 **Trade-off.** An eval with more than about 200 LLM calls takes more than one day on
 Groq. The eval set has to be sized with that in mind, and the deterministic stage has
 to resolve as much as possible first.
 
-## D-018 – Phase 4 comparison: same model on Groq and on local Ollama
-*2026-10-01 · decided by Matteo*
+## D-018 – Phase 4 comparison: large open model on Groq versus small open model locally
+*2026-10-01 · revised 2026-10-03 by Matteo*
 
-This replaces the "cloud model versus local model" comparison of the kickoff brief. The
-same frozen pairs run through `gpt-oss-20b` on Groq and on Ollama. The report shows:
-agreement (the share of pairs with the same decision, plus a table of the
-disagreements), latency per call for each, and the cost: 0 EUR for both.
-**Caveat to state on the slide.** "Same model" means the same published weights. Groq
-and Ollama may use different quantization and different default settings, so small
-differences in the answers are expected, and the agreement rate measures exactly that.
+This replaces both the "cloud model versus local model" comparison of the kickoff brief
+and the first version of this entry ("same model on Groq and on Ollama"), which fell
+with the fit test (D-025). The same frozen pairs run through `gpt-oss-20b` on Groq and
+through the small local model (D-016). The report shows, for both:
+- **accuracy** against the ground truth (precision, recall, F1 for "affected"),
+- **agreement** (the share of pairs with the same decision, plus a table of the
+  disagreements),
+- **latency** per call,
+- the share routed to `needs_review`,
+- and the cost: 0 EUR for both.
+
+**What the slide can honestly say.** How much quality the small local model loses
+against the large one, and what that costs in extra human review. It cannot say that
+the two are equivalent.
 
 ## D-019 – CVSS is fetched on demand, not for every CVE
 *2026-10-01*
@@ -341,3 +359,47 @@ Token counts are logged for every call. The real cost is always reported as 0 EU
 the eval report add a line "what this would cost in a paid cloud", labeled as a
 hypothetical estimate, with the price source next to it. The file is optional. The
 EUR/USD rate in it is an **ASSUMPTION** to adjust.
+
+## D-025 – Fit test: gpt-oss:20b does not run on a 16 GB machine; safety rules for model tests
+*2026-10-03 · measured on 2026-10-01*
+
+**Machine.** 16 GB RAM, Ryzen 5 3600, Radeon RX 5700 (8 GB VRAM), C: SSD, D:/E: one
+2 TB hard disk. Ollama 0.35.0; it uses the RX 5700 through Vulkan (7.2 GB VRAM
+available), although the card is not on Ollama's list of supported AMD cards.
+
+**Measured.**
+
+| | llama3.2 (3B, 2.0 GB) | gpt-oss:20b (14 GB) |
+|---|---|---|
+| Docker stack | running | stopped |
+| Free RAM before loading | 1.3 GB | 4.4 GB |
+| Model stored on | hard disk (E:) | hard disk (E:) |
+| Placement | 100 % GPU (2.5 GB loaded) | planned: 25 layers on GPU (6.3 GB), 16 layers in RAM |
+| Load time | 31.4 s | never finished |
+| Seconds per call (warm) | 4.6 s average, 5.0 s maximum | no call completed |
+| Speed | about 70 tokens/s | – |
+| Valid JSON | 5 of 5 | – |
+| Correct decisions (5 smoke cases) | 2 of 5 | – |
+| Result | runs, but too weak | attempt 1: HTTP 500 after 322 s (Ollama's 5-minute load limit). Attempt 2 (15-minute limit): the PC crashed about 90 seconds in. |
+
+**Why it failed.** The model needs about 13 GB in total. The GPU can take 6.3 GB; the
+rest, plus working memory, did not fit into 4.4 GB of free RAM, and the 14 GB file had
+to be read from a hard disk. The system ran out of memory.
+**What the small-model result shows.** llama3.2 was fast and always returned valid JSON,
+but 3 of 5 decisions were wrong, including a Sophos firewall marked as affected by a
+Fortinet advisory. Valid JSON says nothing about a correct decision. The local model
+must be chosen by measured accuracy, not by speed (D-016).
+**Mistake to learn from.** The second attempt ran unattended in the background with a
+longer time limit, on a machine that was already short of memory. That is what turned a
+failed load into a crash.
+
+**Safety rules for every model test from now on** (also in CLAUDE.md; enforced in code
+by `scripts/model_fit_test.py`):
+1. Ask Matteo before loading any model. No unattended or background model tests.
+2. Check free RAM first; abort if less than model size + 2 GB is free.
+3. Use a small context (4096) and `OLLAMA_MAX_LOADED_MODELS=1`.
+4. Run each test with a hard timeout and stop the Ollama server afterwards.
+
+**Also noted.** The Ollama desktop app ignores the `OLLAMA_MODELS` environment variable
+and uses the model folder from its own settings; only a directly started `ollama serve`
+reads the variable.

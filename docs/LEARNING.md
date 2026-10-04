@@ -64,39 +64,48 @@ publish it.
 
 ## 3. LLM providers: local by default, cloud as option B
 
-**In plain words.** The same open-weight model (gpt-oss-20b) can run in two places:
-on our own machine with Ollama, or in Groq's cloud on its free tier. The code sends
-the same prompt and checks the answer with the same rules in both cases. Only the
-address differs. Local is the default; the cloud is only for fast development with
-synthetic data.
+**In plain words.** A language model can run in two places: on our own machine with
+Ollama, or in Groq's cloud on its free tier. The code sends the same prompt and checks
+the answer with the same rules in both cases. Locally a small model runs, because a
+normal laptop cannot hold a large one. In the cloud the large open model gpt-oss-20b
+runs. Local is the default; the cloud is only for fast development with synthetic data.
 
-**Q: Why is the local model the default if the cloud is faster?**
+**Q: Why is the local model the default if the cloud model is faster and better?**
 A: Because of what the data is. An inventory says which customer runs which firewall
 version and which systems are reachable from the internet. That is exactly what an
 attacker wants to know. With a local model it never leaves the MSP's own machines.
 And a free tier has no guarantees: limits and the model list can change overnight,
 which doesn't fit a process with a 24-hour reaction target.
 
-**Q: Then why use Groq at all?**
-A: Speed while developing. A prompt change tested on 100 pairs takes minutes in the
-cloud and much longer on a laptop CPU. That data is synthetic, so there is no
-confidentiality problem.
+**Q: Why not run the same large model locally?**
+A: I tried. gpt-oss:20b needs about 13 GB of memory. On a 16 GB PC with 4.4 GB free it
+never finished loading, and the second attempt crashed the machine. A small model of
+2 to 3 GB runs entirely on the graphics card and answers in about 5 seconds. The
+honest conclusion: on normal office hardware you get a small model, and the system
+must be designed so that a small model is enough.
 
-**Q: "Same model" on both sides: are the results really identical?**
-A: Not guaranteed, and I measure it instead of assuming it. The published weights are
-the same, but the two providers may compress the model differently (quantization) and
-use different defaults. The evaluation reports how often both give the same decision
-and lists the cases where they differ.
+**Q: A small model makes more mistakes. Why is that acceptable?**
+A: Three things limit the damage. Most pairs never reach the model, because the
+deterministic version check decides them first. When the model is unsure, the case
+goes to a human instead of being guessed. And the model never sets the priority or
+sends anything. I also measure the loss instead of guessing it: the evaluation
+compares the small local model with the large cloud model on the same pairs.
+
+**Q: What did the first small-model test show?**
+A: The 3B model returned valid JSON every time and was still wrong in 3 of 5 cases. It
+even marked a Sophos firewall as affected by a Fortinet advisory. Valid JSON is not
+the same as a correct answer, which is why accuracy is measured separately.
 
 **Q: What happens when Groq's rate limit is hit?**
 A: The eval runner reads the limits from the response headers and slows down before
 reaching them. If it still gets an HTTP 429, it waits as long as the server asks and
-retries. Every finished pair is saved at once, so a run can stop and continue later,
-and the report says how often a limit was hit.
+retries. Every finished pair is saved at once, so a run can stop and continue later.
+A run is also capped at a fixed number of requests, so it stays inside the daily free
+budget.
 
-**Q: What if Groq is down during the live demo?**
-A: Nothing happens, because the demo never calls it. The demo's LLM results were
-computed beforehand and are replayed from a cache.
+**Q: What if Groq or the local model is unavailable during the live demo?**
+A: Nothing happens, because the demo runs no model. Its LLM results were computed
+beforehand and are replayed from a cache.
 
 ## 4. Ingestion
 

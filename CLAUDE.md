@@ -1,7 +1,7 @@
 # CLAUDE.md – project conventions
 
 Schwachstellen-Radar: BSI advisories → match against customer inventories →
-deterministic priority → German drafts → analyst approval in n8n.
+deterministic priority → German ticket and notice from templates → analyst approval in n8n.
 Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
 
 ## Hard rules
@@ -13,6 +13,16 @@ Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
 - **Phases end with a stop.** Wait for Matteo's OK before starting the next phase.
 - No secrets in files. `.env` is gitignored; new variables go into `.env.example`.
 - No EUVD data in git (D-008).
+
+## Model test safety (a test crashed the PC on 2026-10-01, D-025)
+
+- **Ask Matteo before loading any model.** No unattended or background model tests.
+- Check free RAM first; abort if less than model size + 2 GB is free.
+- Use a small context (4096) and `OLLAMA_MAX_LOADED_MODELS=1`.
+- Run each test with a hard timeout and stop the Ollama server afterwards.
+- Use `scripts/model_fit_test.py <model> --confirmed`; it enforces these rules.
+- Local models: at most about 4 GB download, stored on C: (SSD). Never `gpt-oss:20b`
+  locally; it is the Groq model only (D-016).
 
 ## Language
 
@@ -36,6 +46,7 @@ Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
 - Tickets and notices come from deterministic templates. The LLM writes only the short
   German summary. Every fact must come from the advisory or the inventory (D-021).
 - Real cost is 0 EUR. Cloud cost appears only as a labeled hypothetical estimate (D-024).
+  No euro caps; eval runs are capped by `EVAL_GROQ_MAX_REQUESTS` (D-013).
 - All HTTP to data sources goes through `radar/sources/fetcher.py` (snapshots, D-020).
 - Priority is computed in code from `config/scoring.yaml`. The LLM never decides it.
 - When unsure (thresholds, legal points, vendor versioning quirks): make it
@@ -54,8 +65,9 @@ Interview demo; feature freeze **2026-10-12**, presentation 2026-10-16.
   also work as `python scripts/tasks.py <target>` (stdlib only, Python 3.10-compatible).
 - Service code runs in Docker (Python 3.12, uv). Open files with `encoding="utf-8"`
   (the Windows default codepage garbles German umlauts).
-- Local LLM: host Ollama at `http://host.docker.internal:11434`. Laptop: 16 GB RAM,
-  Ryzen 5 3600, Radeon RX 5700; C: is nearly full, D: and E: have space.
+- Local LLM: host Ollama at `http://host.docker.internal:11434`. This PC: 16 GB RAM,
+  Ryzen 5 3600, Radeon RX 5700 (8 GB VRAM, used by Ollama through Vulkan); C: is the
+  SSD, D: and E: are one hard disk. A second, weaker laptop will be used too.
 
 ## Layout
 
@@ -69,6 +81,6 @@ data/snapshots/   daily raw pulls (gitignored); demo/ is the one committed snaps
 data/inventory/   synthetic customer inventories + labels.json
 n8n/workflows/    exported workflow JSON
 eval/             datasets, runner, report
-scripts/          tasks.py (task runner) and one-off helpers
+scripts/          tasks.py (task runner), model_fit_test.py (safe local model test)
 docs/             ARCHITECTURE, DECISIONS, LEARNING, DEMO
 ```

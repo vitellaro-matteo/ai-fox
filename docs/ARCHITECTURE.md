@@ -21,7 +21,7 @@ flowchart LR
         MAIL["Mailpit<br/>catches every mail"]
     end
 
-    LLM["LLM (gpt-oss-20b)<br/>host Ollama = default<br/>Groq free tier = option B"]
+    LLM["LLM<br/>host Ollama, small model = default<br/>Groq free tier, gpt-oss-20b = option B"]
     INV["Customer inventories<br/>CSV / JSON<br/>(synthetic)"]
     ANALYST(("Analyst"))
 
